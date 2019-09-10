@@ -1,0 +1,32 @@
+@media screen and(max - width: 870 px) {
+    body {
+        perspective: 1500 px; - moz - perspective: 1500 px; - ms - perspective: 1500 px; - o - perspective: 1500 px; - webkit - perspective: 1500 px
+    }#
+    right {
+        right: 0!important;transform: translateX(75 % ) rotateY(60 deg); - moz - transform: translateX(75 % ) rotateY(60 deg); - webkit - transform: translateX(75 % ) rotateY(60 deg); - ms - transform: translateX(75 % ) rotateY(60 deg); - o - transform: translateX(75 % ) rotateY(60 deg)
+    }#
+    container.novisible {
+        transform: translateX(-175 px) rotateY(-40 deg);transform - origin: 50 % 50 % 0; - o - transform: translateX(-175 px) rotateY(-40 deg); - o - transform - origin: 50 % 50 % 0; - ms - transform: translateX(-175 px) rotateY(-40 deg); - ms - transform - origin: 50 % 50 % 0; - moz - transform: translateX(-175 px) rotateY(-40 deg); - moz - transform - origin: 50 % 50 % 0; - webkit - transform: translateX(-175 px) rotateY(-40 deg); - webkit - transform - origin: 50 % 50 % 0;opacity: .6
+    }#
+    right.visible {
+        right: 0!important;transform: translateX(0) rotateY(0); - moz - transform: translateX(0) rotateY(0); - webkit - transform: translateX(0) rotateY(0); - ms - transform: translateX(0) rotateY(0); - o - transform: translateX(0) rotateY(0)
+    }#
+    right.bg - move, #right.visible.bg - move {
+        right: -35 px!important
+    }#
+    right.bg - move {
+        width: 283 px;transition: all.25 s ease - in -out 0 s; - o - transition: all.25 s ease - in -out 0 s; - moz - transition: all.25 s ease - in -out 0 s; - webkit - transition: all.25 s ease - in -out 0 s; - ms - transition: all.25 s ease - in -out 0 s;transform: rotate(0) translateZ(0); - o - transform: rotate(0) translateZ(0); - moz - transform: rotate(0) translateZ(0); - webkit - transform: rotate(0) translateZ(0); - ms - transform: rotate(0) translateZ(0)
+    }.connect h4, .copy - write, .myContacts, ul# nav {
+        transition: all.25 s ease - in -out 0 s; - o - transition: all.25 s ease - in -out 0 s; - moz - transition: all.25 s ease - in -out 0 s; - webkit - transition: all.25 s ease - in -out 0 s; - ms - transition: all.25 s ease - in -out 0 s;transform: rotate(0) translateZ(0); - o - transform: rotate(0) translateZ(0); - moz - transform: rotate(0) translateZ(0); - webkit - transform: rotate(0) translateZ(0); - ms - transform: rotate(0) translateZ(0)
+    }
+}
+@media screen and(max - width: 550 px) {#
+    container.novisible {
+        transform: translateX(-190 px) rotateY(-40 deg); - webkit - transform: translateX(-190 px) rotateY(-40 deg); - ms - transform: translateX(-190 px) rotateY(-40 deg); - moz - transform: translateX(-190 px) rotateY(-40 deg); - o - transform: translateX(-190 px) rotateY(-40 deg)
+    }
+}
+@media screen and(max - width: 360 px) {#
+    container.novisible {
+        transform: translateX(-200 px) rotateY(-40 deg); - webkit - transform: translateX(-200 px) rotateY(-40 deg); - ms - transform: translateX(-200 px) rotateY(-40 deg); - moz - transform: translateX(-200 px) rotateY(-40 deg); - o - transform: translateX(-200 px) rotateY(-40 deg)
+    }
+}

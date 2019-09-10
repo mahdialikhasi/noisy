@@ -71,6 +71,8 @@ Cache::config('default', array('engine' => 'File'));
  */
 CakePlugin::load('ShamsiDate');
 CakePlugin::load('Upload');
+CakePlugin::load(array('Sitemap' => array('routes' => true, 'bootstrap' => true)));
+//CakePlugin::load('Search');
 /**
  * You can attach event listeners to the request lifecycle as Dispatcher Filter. By default CakePHP bundles two filters:
  *

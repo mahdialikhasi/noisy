@@ -1,6 +1,6 @@
 <?php
     class ContactsController extends AppController{
-        public $components = array('Paginator', 'Session', 'Captcha'=>array('field'=>'security_code'));
+        public $components = array('Email', 'Paginator', 'Session', 'Captcha'=>array('field'=>'security_code'));
         public $helpers = array('Html', 'Form', 'Captcha');
         public function beforeFilter(){
             parent::beforeFilter();
@@ -21,10 +21,19 @@
                 $this->Contact->set($this->request->data);
                 $this->Contact->create();
                 if($this->Contact->save($this->request->data)){
-                    $this->Session->setFlash(__('نامه ی شما با موفقیت ارسال گردید'));
+                    $this->Session->setFlash('نامه ی شما با موفقیت ارسال گردید', 'default', array('class' => 'alert alert-success'));
+                    $Email = new CakeEmail();
+		    $Email->from(array('info@noisy.ir' => 'دست نوشته های یک تازه کار'))
+    			->sender('info@noisy.ir', 'دست نوشته های یک تازه کار')
+    			->emailFormat('html')
+    			->template('default', 'default')
+			->to('mahdialikhasi1389@gmail.com')
+			->subject('نظر جدید')
+			->viewVars(array('content' => "شما نظر جدیدی در وبلاگ دست نوشته های یک تازه کار دارید"))
+			->send();
                     $this->redirect('/');
                 }else{
-                    $this->Session->setFlash(__('متاسفانه نامه ی شما ارسال نشد'));
+                    $this->Session->setFlash('متاسفانه نامه ی شما ارسال نشد', 'default', array('class' => 'alert alert-success'));
                 }
             }
         }

@@ -7,14 +7,15 @@
         echo $this->Form->input('fullname', array('label' => 'نام و نام خانوادگی', 'class' => 'form-control contact-fullname', 'div' => array('class' => "form-group ".($this->Form->isFieldError('fullname') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
         echo $this->Form->input('email', array('label' => 'آدرس ایمیل', 'class' => 'form-control contact-email', 'div' => array('class' => "form-group ".($this->Form->isFieldError('email') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
         echo $this->Form->input('body', array('label' => 'متن', 'class' => 'form-control contact-body', 'div' => array('class' => "form-group ".($this->Form->isFieldError('body') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
-	$customcaptcha['length'] = 8;
+	$customcaptcha['length'] = 7;
 	$customcaptcha['width'] = 200;
+	$customcaptcha['model'] = 'Contact';
 	$this->Captcha->render($customcaptcha);
         ?>
     </div>
     <div class="panel-footer">
         <?php
-        echo $this->Form->end(array('label' => 'ارسال دست نوشته', 'class' => 'btn btn-primary'));
+        echo $this->Form->end(array('label' => 'ارسال نظر', 'class' => 'btn btn-primary'));
         ?>
     </div>
 </div>

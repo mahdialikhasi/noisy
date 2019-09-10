@@ -5,7 +5,7 @@
             $this->Auth->allow('index', 'view', 'captcha');
         }
         public $uses = array('Tag', 'Blog');
-        public $components = array('ShamsiDate.Shamsi', 'Paginator','Captcha'=>array('field'=>'security_code'));
+        public $components = array('Email', 'ShamsiDate.Shamsi', 'Paginator','Captcha'=>array('field'=>'security_code'));
         public $helpers = array('ShamsiDate.Shamsi','Captcha');
         public function index(){
             $this->Paginator->settings = array(
@@ -64,19 +64,29 @@
             if(!$address){
                 throw new NotFoundException(__('آدرس ناقص است. لطفا در وارد کردن آدرس دقت فرمایید'));
             }
-            $data = $this->Blog->find('all', array('conditions' => array('address' => $address)));
+            $data = $this->Blog->find('all', array('conditions' => array('address' => $address)));            
             if(!$data){
                 throw new NotFoundException(__('آدرس اشتباه است. لطفا در وارد کردن آدرس دقت فرمایید'));
             }
             $this->set('data', $data);
+            $this->set('title_for_layout', $data[0]['Blog']['title']);
             if($this->request->is('post') && isset($this->request->data['Comment'])){
                 $this->request->data['Comment']['blog_id'] = $data[0]['Blog']['id'];
+                $comment_content = $this->request->data['Comment'];
                 $this->Blog->Comment->setCaptcha('security_code', $this->Captcha->getCode('Comment.security_code'));
                 $this->Blog->Comment->set($this->request->data);
                 //print_r($this->request->data);
                 $this->Blog->Comment->create();
                 if($this->Blog->Comment->save($this->request->data)){
                     $this->Session->setFlash(__('نظرشما با موفقیت ارسال شد'), 'default', array('class' => 'alert alert-success'));
+                    $Email = new CakeEmail();
+		    $Email->from(array('info@noisy.ir' => 'دست نوشته های یک تازه کار'))
+    			->sender('info@noisy.ir', 'دست نوشته های یک تازه کار')
+    			->emailFormat('html')
+    			->template('default', 'default')
+			->to('mahdialikhasi1389@gmail.com')
+			->subject('نظر جدید')
+			->send("شما نظر جدیدی در وبلاگ دست نوشته های یک تازه کار دارید");
                 }else{
                     $this->Session->setFlash(__('متاسفانه نظر شما ارسال نشد'), 'default', array('class' => 'alert alert-danger'));
                 }
