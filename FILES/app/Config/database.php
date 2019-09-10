@@ -68,9 +68,9 @@ class DATABASE_CONFIG {
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'noisyir_blog',
+		'login' => 'root',
 		'password' => '',
-		'database' => 'noisyir_blog',
+		'database' => 'blog',
 		'prefix' => '',
 		'encoding' => 'utf8',
 	);

@@ -1,24 +1,31 @@
-<div class="panel panel-default">
-    <div class="panel-heading">ارتباط با من</div>
-    <div class="panel-body">
-        <?php
-        echo $this->Form->create('Contact');
-        echo $this->Form->input('title', array('label' => 'عنوان', 'class' => 'form-control contact-title', 'div' => array('class' => "form-group ".($this->Form->isFieldError('title') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
-        echo $this->Form->input('fullname', array('label' => 'نام و نام خانوادگی', 'class' => 'form-control contact-fullname', 'div' => array('class' => "form-group ".($this->Form->isFieldError('fullname') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
-        echo $this->Form->input('email', array('label' => 'آدرس ایمیل', 'class' => 'form-control contact-email', 'div' => array('class' => "form-group ".($this->Form->isFieldError('email') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
-        echo $this->Form->input('body', array('label' => 'متن', 'class' => 'form-control contact-body', 'div' => array('class' => "form-group ".($this->Form->isFieldError('body') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
-	$customcaptcha['length'] = 7;
-	$customcaptcha['width'] = 200;
-	$customcaptcha['model'] = 'Contact';
-	$this->Captcha->render($customcaptcha);
-        ?>
+<?php
+$this->Html->addCrumb('ارتباط با من', '/contacts/', array('class' => 'breadcrumb'));
+?>
+<h1 class="hide">تماس با ما</h1>
+<h2>ارتباط با من</h2>
+<section class="row contacts">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content blue-grey-text text-darken-4">
+                <span class="card-title">تماس با من</span>
+                <?php
+                echo $this->Form->create('Contact');
+                echo $this->Form->input('title', array('label' => 'عنوان', 'div' => array('class' => "input-field ".($this->Form->isFieldError('title') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
+                echo $this->Form->input('fullname', array('label' => 'نام و نام خانوادگی', 'div' => array('class' => "input-field ".($this->Form->isFieldError('fullname') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
+                echo $this->Form->input('email', array('label' => 'آدرس ایمیل', 'div' => array('class' => "input-field ".($this->Form->isFieldError('email') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
+                echo $this->Form->input('body', array('label' => 'متن', 'class' => 'materialize-textarea', 'div' => array('class' => "input-field ".($this->Form->isFieldError('body') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
+                $customcaptcha['length'] = 6;
+                $customcaptcha['width'] = 200;
+                $customcaptcha['model'] = 'Contact';
+                $this->Captcha->render($customcaptcha);
+                ?>
+            </div>
+            <div class="card-action">
+                <?php echo $this->Form->end(array('label' => 'ارسال', 'div' => array('class' => "btn waves-effect submit submitdiv"))); ?>
+            </div>
+        </div>
     </div>
-    <div class="panel-footer">
-        <?php
-        echo $this->Form->end(array('label' => 'ارسال نظر', 'class' => 'btn btn-primary'));
-        ?>
-    </div>
-</div>
+</section>
 <script>
 jQuery('.creload').on('click', function() {
     var mySrc = $(this).prev().attr('src');
@@ -29,5 +36,6 @@ jQuery('.creload').on('click', function() {
     $(this).prev().attr('src', mySrc + glue + new Date().getTime());
     return false;
 });
-$('#ContactSecurityCode').addClass('form-control');
+$('#ContactSecurityCode').parent().addClass('input-field');
+$('<i class="material-icons right">send</i>').appendTo('.submitdiv');
 </script>

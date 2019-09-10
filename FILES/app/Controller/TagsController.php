@@ -15,7 +15,7 @@
             $this->set('title_for_layout', 'برچسب ها');
             if(!$tagName){
                 throw new NotFoundException(__('لطفا یک تگ وارد کنید'));
-            }
+            }            
             $data = $this->Tag->find('all', array('conditions' => array('name' => $tagName)));
             $data = $data[0];
             $this->set('title_for_layout', $data['Tag']['name']);
@@ -36,6 +36,7 @@
             $Blogdata = $this->Paginator->paginate('Blog');
             $this->set('datas', $Blogdata);
             $this->set('data', $data);
+            $this->set('tagName', $tagName);
         }
     }
 ?>

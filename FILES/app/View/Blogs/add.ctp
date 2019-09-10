@@ -1,22 +1,33 @@
-<div class="panel panel-default">
-    <div class="panel-heading">افزودن دست نوشته</div>
-    <div class="panel-body">
-        <?php
-            echo $this->Html->script('ckeditor/ckeditor');
-            echo $this->Form->create('Blog');
-            echo $this->Form->input('title', array('label' => 'عنوان', 'placeholder' => 'عنوان', 'class' => 'form-control', 'div' => array('class' => "form-group ".($this->Form->isFieldError('title') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
-            echo $this->Form->input('description', array('label' => 'خلاصه', 'placeholder' => 'خلاصه', 'class' => 'ckeditor form-control', 'div' => array('class' => "form-group ".($this->Form->isFieldError('description') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
-            echo $this->Form->input('body', array('label' => 'متن کامل', 'placeholder' => 'متن کامل', 'class' => 'ckeditor form-control', 'div' => array('class' => "form-group ".($this->Form->isFieldError('body') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
-            echo $this->Form->input('draft', array('type' => 'checkbox','label' => 'ذخیره به عنوان پیش نویس', 'placeholder' => 'ذخیره به عنوان پیش نویس', 'style' => 'float:left;width:50%', 'class' => 'form-control', 'div' => array('class' => "form-group ".($this->Form->isFieldError('draft') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
-            echo $this->Form->input('Tag', array('label' => 'برچسب های این دست نوشته', 'type' => 'text', 'class' => 'form-control', 'div' => array('class' => "form-group ".($this->Form->isFieldError('Tag') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
-        ?>
-    </div>
-    <div class="panel-footer">
-        <?php
-        echo $this->Form->end(array('label' => 'ارسال دست نوشته', 'class' => 'btn btn-primary'));
-        ?>
+<?php
+$this->Html->addCrumb('دست نوشته ها', '/blogs/', array('class' => 'breadcrumb'));
+$this->Html->addCrumb('افزودن دست نوشته', '/blogs/add/', array('class' => 'breadcrumb'));
+?>
+<h1 class="hide">ویرایش دست نوشته</h1>
+<div class="row">
+    <h2>افزودن دست نوشته</h2>
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content black-text">
+                <span class="card-title">افزودن دست نوشته</span>
+                <?php
+                echo $this->Html->script('ckeditor/ckeditor');
+                echo $this->Form->create('Blog');                
+                echo $this->Form->input('title', array('label' => 'عنوان', 'div' => array('class' => "input-field ".($this->Form->isFieldError('title') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
+                echo $this->Form->input('description', array('label' => 'خلاصه', 'class' => 'ckeditor', 'div' => array('class' => "input-field ".($this->Form->isFieldError('description') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
+                echo $this->Form->input('body', array('label' => 'متن کامل', 'class' => 'ckeditor', 'div' => array('class' => "input-field ".($this->Form->isFieldError('body') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
+                echo $this->Form->input('draft', array('type' => 'checkbox','label' => 'ذخیره به عنوان پیش نویس'));
+                echo $this->Form->input('Tag', array('label' => 'برچسب های این دست نوشته', 'type' => 'text', 'div' => array('class' => "input-field tagdiv ".($this->Form->isFieldError('Tag') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
+                ?>                              
+            </div>
+            <div class="card-action">
+                <?php
+                echo $this->Form->end(array('label' => 'ویرایش دست نوشته', 'div' => array('class' => "btn waves-effect submit submitdiv")));
+                ?>
+            </div>
+        </div>
     </div>
 </div>
+<?php echo $this->Html->script('jquery-ui.min') ?>
 <script type="text/javascript">
     var availableTags =[
         <?php
@@ -59,4 +70,5 @@
             return false;
         }
     });
+    $("#ui-id-1").appendTo(".tagdiv");
 </script>

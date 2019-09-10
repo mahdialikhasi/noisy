@@ -75,8 +75,7 @@
                 $this->request->data['Comment']['blog_id'] = $data[0]['Blog']['id'];
                 $comment_content = $this->request->data['Comment'];
                 $this->Blog->Comment->setCaptcha('security_code', $this->Captcha->getCode('Comment.security_code'));
-                $this->Blog->Comment->set($this->request->data);
-                //print_r($this->request->data);
+                $this->Blog->Comment->set($this->request->data);                
                 $this->Blog->Comment->create();
                 if($this->Blog->Comment->save($this->request->data)){
                     $this->Session->setFlash(__('نظرشما با موفقیت ارسال شد'), 'default', array('class' => 'alert alert-success'));
@@ -111,6 +110,7 @@
                     $this->Session->setFlash(__('متاسفانه دست نوشته ذخیره نشد'), 'default', array('class' => 'alert alert-success'));
                 }
             }
+            $this->set('data', $data);
             $this->request->data = $data;
         }
         public function delete($id){

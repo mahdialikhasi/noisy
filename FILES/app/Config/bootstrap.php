@@ -69,6 +69,10 @@ Cache::config('default', array('engine' => 'File'));
  * CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit
  *
  */
+App::uses('Folder', 'Utility');
+App::uses('File', 'Utility');
+
+
 CakePlugin::load('ShamsiDate');
 CakePlugin::load('Upload');
 CakePlugin::load(array('Sitemap' => array('routes' => true, 'bootstrap' => true)));

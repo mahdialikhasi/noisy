@@ -45,6 +45,7 @@
             if(!$data){
                 throw new NotFoundException(__('آی دی وارد شده نامعتبر است'));
             }
+            $this->set('title_for_layout', 'مشاهده ی تماس کاربر');
             $this->set('data', $data);
         }
         public function lists(){
