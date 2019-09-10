@@ -1,0 +1,265 @@
+2014-12-01 18:54:45 Notice: Notice (8): Undefined variable: address in [/home/noisyir/public_html/app/Controller/BlogsController.php, line 56]
+Trace:
+BlogsController::view() - APP/Controller/BlogsController.php, line 56
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-01 18:54:57 Notice: Notice (8): Undefined variable: tagName in [/home/noisyir/public_html/app/Controller/TagsController.php, line 16]
+Trace:
+TagsController::search() - APP/Controller/TagsController.php, line 16
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-01 18:55:00 Notice: Notice (8): Undefined variable: address in [/home/noisyir/public_html/app/Controller/WorksController.php, line 19]
+Trace:
+WorksController::view() - APP/Controller/WorksController.php, line 19
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-01 18:56:32 Notice: Notice (8): Undefined offset: 0 in [/home/noisyir/public_html/app/Controller/TagsController.php, line 20]
+Trace:
+TagsController::search() - APP/Controller/TagsController.php, line 20
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-01 19:00:44 Notice: Notice (8): Undefined offset: 0 in [/home/noisyir/public_html/app/Controller/TagsController.php, line 20]
+Trace:
+TagsController::search() - APP/Controller/TagsController.php, line 20
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-03 13:38:41 Notice: Notice (8): Undefined variable: captchaSettings in [/home/noisyir/public_html/app/View/Contacts/index.ctp, line 10]
+Trace:
+include - APP/View/Contacts/index.ctp, line 10
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::render() - CORE/Cake/View/View.php, line 471
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-03 13:40:49 Notice: Notice (8): Undefined variable: captchaSettings in [/home/noisyir/public_html/app/View/Contacts/index.ctp, line 10]
+Trace:
+include - APP/View/Contacts/index.ctp, line 10
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::render() - CORE/Cake/View/View.php, line 471
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-03 13:41:01 Notice: Notice (8): Undefined variable: captchaSettings in [/home/noisyir/public_html/app/View/Contacts/index.ctp, line 10]
+Trace:
+include - APP/View/Contacts/index.ctp, line 10
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::render() - CORE/Cake/View/View.php, line 471
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-03 13:41:04 Notice: Notice (8): Undefined variable: captchaSettings in [/home/noisyir/public_html/app/View/Contacts/index.ctp, line 10]
+Trace:
+include - APP/View/Contacts/index.ctp, line 10
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::render() - CORE/Cake/View/View.php, line 471
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-03 13:41:49 Notice: Notice (8): Undefined variable: captchaSettings in [/home/noisyir/public_html/app/View/Contacts/index.ctp, line 10]
+Trace:
+include - APP/View/Contacts/index.ctp, line 10
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::render() - CORE/Cake/View/View.php, line 471
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-03 13:42:32 Notice: Notice (8): Undefined variable: captchaSettings in [/home/noisyir/public_html/app/View/Contacts/index.ctp, line 10]
+Trace:
+include - APP/View/Contacts/index.ctp, line 10
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::render() - CORE/Cake/View/View.php, line 471
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-03 13:47:58 Notice: Notice (8): Undefined variable: captchaSettings in [/home/noisyir/public_html/app/View/Contacts/index.ctp, line 10]
+Trace:
+include - APP/View/Contacts/index.ctp, line 10
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::render() - CORE/Cake/View/View.php, line 471
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-03 13:49:19 Notice: Notice (8): Undefined variable: captchaSettings in [/home/noisyir/public_html/app/View/Contacts/index.ctp, line 10]
+Trace:
+include - APP/View/Contacts/index.ctp, line 10
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::render() - CORE/Cake/View/View.php, line 471
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-04 06:36:40 Notice: Notice (8): Indirect modification of overloaded property ContactsController::$Paginator has no effect in [/home/noisyir/public_html/app/Controller/ContactsController.php, line 42]
+Trace:
+ContactsController::lists() - APP/Controller/ContactsController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-04 06:36:44 Notice: Notice (8): Indirect modification of overloaded property ContactsController::$Paginator has no effect in [/home/noisyir/public_html/app/Controller/ContactsController.php, line 42]
+Trace:
+ContactsController::lists() - APP/Controller/ContactsController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-04 06:46:01 Notice: Notice (8): Undefined offset: 0 in [/home/noisyir/public_html/app/View/Contacts/view.ctp, line 2]
+Trace:
+include - APP/View/Contacts/view.ctp, line 2
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::render() - CORE/Cake/View/View.php, line 471
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-04 06:46:04 Notice: Notice (8): Undefined offset: 0 in [/home/noisyir/public_html/app/View/Contacts/view.ctp, line 2]
+Trace:
+include - APP/View/Contacts/view.ctp, line 2
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::render() - CORE/Cake/View/View.php, line 471
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-04 06:46:48 Notice: Notice (8): Undefined offset: 0 in [/home/noisyir/public_html/app/View/Contacts/view.ctp, line 2]
+Trace:
+include - APP/View/Contacts/view.ctp, line 2
+View::_evaluate() - CORE/Cake/View/View.php, line 948
+View::_render() - CORE/Cake/View/View.php, line 910
+View::render() - CORE/Cake/View/View.php, line 471
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-04 15:21:55 Notice: Notice (8): Undefined offset: 0 in [/home/noisyir/public_html/app/Controller/BlogsController.php, line 91]
+Trace:
+BlogsController::edit() - APP/Controller/BlogsController.php, line 91
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-04 15:22:14 Notice: Notice (8): Undefined offset: 0 in [/home/noisyir/public_html/app/Controller/BlogsController.php, line 91]
+Trace:
+BlogsController::edit() - APP/Controller/BlogsController.php, line 91
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-04 15:24:09 Notice: Notice (8): Undefined offset: 0 in [/home/noisyir/public_html/app/Controller/BlogsController.php, line 91]
+Trace:
+BlogsController::edit() - APP/Controller/BlogsController.php, line 91
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-04 15:25:27 Notice: Notice (8): Undefined offset: 0 in [/home/noisyir/public_html/app/Controller/BlogsController.php, line 91]
+Trace:
+BlogsController::edit() - APP/Controller/BlogsController.php, line 91
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-05 06:49:44 Notice: Notice (8): Undefined offset: 0 in [/home/noisyir/public_html/app/Controller/BlogsController.php, line 91]
+Trace:
+BlogsController::edit() - APP/Controller/BlogsController.php, line 91
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-05 10:26:43 Notice: Notice (8): Undefined offset: 0 in [/home/noisyir/public_html/app/Controller/BlogsController.php, line 91]
+Trace:
+BlogsController::edit() - APP/Controller/BlogsController.php, line 91
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-10 12:59:25 Notice: Notice (8): Undefined offset: 0 in [/home/noisyir/public_html/app/Controller/BlogsController.php, line 91]
+Trace:
+BlogsController::edit() - APP/Controller/BlogsController.php, line 91
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-29 09:30:55 Notice: Notice (8): Undefined variable: address in [/home/noisyir/public_html/app/Controller/BlogsController.php, line 64]
+Trace:
+BlogsController::view() - APP/Controller/BlogsController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
+2014-12-29 09:30:57 Notice: Notice (8): Undefined variable: address in [/home/noisyir/public_html/app/Controller/WorksController.php, line 19]
+Trace:
+WorksController::view() - APP/Controller/WorksController.php, line 19
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 165
+[main] - APP/webroot/index.php, line 108
+
