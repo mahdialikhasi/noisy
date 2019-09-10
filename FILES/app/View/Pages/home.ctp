@@ -2,9 +2,9 @@
 	//print_r($data_blogs);
 	//print_r($data_works);
 ?>
-<div class="myWorksSelected">
+<section class="myWorksSelected">
 	<h2>
-		<p>چند تا از نمونه کار های من</p>
+		چند تا از نمونه کار های من
 	</h2>
 	<div class="first">
 		<?php
@@ -26,24 +26,26 @@
 			</a>';
 		?>	
 	</div>
-</div>
-<div class="lastBlogs">
+</section>
+<section class="lastBlogs">
 	<h2>
-		<p>آخرین دست نوشته های من</p>
+		آخرین دست نوشته های من
 	</h2>
+	<div id="lastBlogs">
 	<?php
 		foreach($data_blogs as $blog){
 			$description = str_split($blog['Blog']['description'], 560);
 			$description = $description[0] . '...';
 			echo '
-			<div class="lastBlogContent lastBlog'.$blog['Blog']['id'].'">
+			<article class="lastBlogContent lastBlog'.$blog['Blog']['id'].'">
 				<h4><a class="blog-link" href="/blogs/view/'.$blog['Blog']['address'].'">'.$blog['Blog']['title'].'</a></h4>
 				<section class="blog-description">'.$description.'</section>
 				<p><a class="blog-more-link" href="/blogs/view/'.$blog['Blog']['address'].'">بیشتر بخوانید <i>←</i></a></p>
-			</div>';
+			</article>';
 		}
 	?>
-</div>
+	</div>
+</section>
 <script type="text/javascript">
 	var text;
 	function removeBadChar(){
@@ -62,3 +64,6 @@
 	}
 	removeBadChar();		
 </script>
+<?php
+	//echo $this->Html->script('ho');
+?>

@@ -1,10 +1,10 @@
-<div class="blog-content">
+<section class="blog-content">
     <?php
         foreach($datas as $data){
             echo '<h2><a class="blog-link" href="/blogs/view/'.$data['Blog']['address'].'">'.$data['Blog']['title'].'</a></h2>';
             $created = $this->Shamsi->date('l j F Y', strtotime($data['Blog']['created']), false, null);
             echo '<h4 class="blog-date">'.$created.'</h4>';
-            echo '<section class="blog-description">'.$data['Blog']['description'].'</section>';
+            echo '<article class="blog-description">'.$data['Blog']['description'].'</article>';
             echo '<p><a class="blog-more-link" href="/blogs/view/'.$data['Blog']['address'].'">بیشتر بخوانید <i>←</i></a></p>';
             echo '<br />';
             echo '<br />';
@@ -23,4 +23,4 @@
             ?>
         </ul>
     <?php } ?>
-</div>
+</section>

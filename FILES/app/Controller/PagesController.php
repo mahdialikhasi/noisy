@@ -6,8 +6,16 @@ class PagesController extends AppController {
         parent::beforeFilter();
         $this->Auth->allow();
     }
-    public function display() {
-    	$data_blogs = $this->Blog->find('all', array('limit' => 4, 'order' => 'created DESC','conditions' => array('draft' => false)));
+    public $components = array('Paginator');
+    public function display(){
+    	$this->Paginator->settings = array(
+        	'limit' => 4,
+                'order' => 'created DESC',
+                'conditions' => array(
+                    'draft' => false
+                )
+	);            
+    	$data_blogs = $this->Paginator->paginate('Blog');
     	$data_works = $this->Work->find('all', array('limit' => 2, 'order' => 'created DESC', 'conditions' => array('ishome' => 1)));
     	$this->set('data_blogs', $data_blogs);
     	$this->set('data_works', $data_works);

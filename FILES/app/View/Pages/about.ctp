@@ -3,7 +3,7 @@ $this->set('title_for_layout', 'درباره ی من');
 ?>
 <p class="aboutHeader">به نام دوست</p>
 <div class="aboutAvatar"><?php echo $this->Html->image('myAvatar.png', array('alt' => 'آواتار من')); ?></div>
-<span class="about">
+<p class="about">
 	من <a href="http://noisy.ir/about/" alt="من کیستم؟" >مهدی علی خاصی </a> هستم، اهل اصفهان، شهر زیبای خدا.
     <br>
 	یک طراح و توسعه دهنده ی وب که به تازگی فعالیت های خودم را در این حیطه شروع کرده ام.
@@ -34,5 +34,5 @@ $this->set('title_for_layout', 'درباره ی من');
     <br>
 	و البته کمی هم در Flash و Visual Basic کار کرده ام ولی از آنجایی که با عقیده های Open Source من جور در نمی آمدند آن دو را هم به کناری گذاشتم.
     <br>
-</span>
+</p>
                             

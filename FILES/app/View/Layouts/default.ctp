@@ -47,7 +47,7 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
 </a>
-<div id="right">
+<nav id="right">
     <div class="wrapper">
         <a href="/" alt="خانه"  class="logo"><div class="logo-div"></div></a>
         <ul id="nav">
@@ -90,15 +90,15 @@
         <div class="copy-write"><p>کپی‌رایت 1393<br> تمام حقوق محفوظ است.</p></div>
     </div>
     <div class="bg-move"></div>
-</div>
-<div id="container">
+</nav>
+<section id="container">
     <div id="header"><div class="header-text"><p id="main"></p><p class="blink"></p></div></div><hr class="header-hr">
-    <div id="content">
+    <section id="content">
         <?php echo $this->Session->flash(); ?>
         <?php echo $this->fetch('content'); ?>
-    </div>
+    </section>
     <div id="loading"><div class="loading-div"><div class="cube1"></div><div class="cube2"></div></div></div>
-</div>
+</section>
 <?php echo $this->Html->script('default'); ?>
 </body>
 </html>

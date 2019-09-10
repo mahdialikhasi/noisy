@@ -1,11 +1,11 @@
-<div class="blog-content">
+<section class="blog-content">
     <?php
         //print_r($data);
         $data = $data[0];
         echo '<h2><a class="blog-link" href="/blogs/view/'.$data['Blog']['address'].'">'.$data['Blog']['title'].'</a></h2>';
         $created = $this->Shamsi->date('l j F Y', strtotime($data['Blog']['created']), false, null);
         echo '<h4 class="blog-date">'.$created.'</h4>';
-        echo '<section class="blog-body">'.$data['Blog']['body'].'</section>';
+        echo '<article class="blog-body">'.$data['Blog']['body'].'</article>';
         echo '<div class="blogFooter">';
             echo '<hr class="hrTag">';
             if(!empty($data['Tag'])){
@@ -69,7 +69,7 @@
             echo '</div></div>';
         echo '</div>';
     ?>
-</div>
+</section>
 <?php
 	echo $this->Html->script('highlight.min');
 	echo $this->Html->css('monokai_sublime.min');

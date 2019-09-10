@@ -217,6 +217,7 @@
  *
  */
 	Configure::write('Session', array(
+		/*'cookie' => 'noisy',*/
 		'defaults' => 'php'
 	));
 
