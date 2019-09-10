@@ -236,7 +236,9 @@ a.button-collapse.top-nav {
 .carousel.carousel-slider{
 	height: 400px;
 }
-
+.carousel .carousel-item img{
+	height: 400px;
+}
 /*Breadcrumbs*/
 .breadcrumb{
 	font-size: 28px;
@@ -269,9 +271,11 @@ nav.pinned + div + section {
 	visibility: hidden;
 }
 .card .card-content .card-title{
-	line-height: 10px;
+	line-height: 25px;
 	font-weight: bold;
 	font-size: 16pt;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 .card .card-action{
 	padding: 15px;
@@ -310,10 +314,7 @@ main{
 footer.page-footer .footer-copyright{
 	line-height: 1.5;
 }
-.page-footer .subscribe .submit{
-	padding-right: 10px;
-    padding-left: 10px;
-}
+
 .input-field .prefix ~ input, .input-field .prefix ~ textarea, .input-field .prefix ~ label, .input-field .prefix ~ .validate ~ label, .input-field .prefix ~ .autocomplete-content{
 	margin-left: 0;
 	margin-right: 3rem;
@@ -324,6 +325,9 @@ footer.page-footer .footer-copyright{
 .page-footer .subscribe .prefix{
 	text-align: right;
     color: #9e9e9e;
+}
+.page-footer .subscribe .input-field{
+    color: white;
 }
 .page-footer .subscribe .prefix.active{
 	color: #26a69a;
@@ -480,11 +484,11 @@ body > span[role="status"]{
 	font-size: 18px;
 	margin-right: 10px;
 }
-.rolescard h4{
+.rolescard h4, .userscard h4{
 	font-size: 15pt;
     line-height: 1.618;
 }
-.rolescard a{
+.rolescard a, .userscard a{
 	color: #263238 !important;
 }
 /*Works*/
@@ -502,7 +506,7 @@ body > span[role="status"]{
 .workspage h4.weblink a{
 	text-transform: lowercase !important;
 }
-.work-view h3.work-body , .work-view span.work-body{
+.work-view h3.work-body , .work-view span.work-body, h3.contact-body{
     font-size: 15pt;
     line-height: 1.618;
 }
@@ -547,6 +551,7 @@ form div.btn input[type="submit"]{
 	padding-left: 2rem;
 	padding-right: 3rem;
 	z-index: 2;
+	position: relative;
 }
 form div.btn i{
 	z-index: 1;
@@ -565,4 +570,28 @@ span.work-body .weblink a{
 }
 .work-view span.work-body.block h4{
 	display: inline;
+}
+
+/**/
+h3.contact-body ul.sociallinks li {
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+}
+.sociallinks .btn-floating{
+	width: 55px;
+    height: 55px;
+    padding-top: 3px;
+}
+
+/*Small size fix*/
+@media only screen and (max-width : 585px) {
+	.carousel.carousel-slider{
+		display: none;
+	}
+}
+@media only screen and (max-width : 600px) {
+	.breadcrumb{
+		font-size: 18px;
+	}
 }

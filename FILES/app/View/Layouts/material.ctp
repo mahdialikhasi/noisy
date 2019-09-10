@@ -63,7 +63,7 @@
     /*echo $this->Html->script('jquery-ui.min');*/
     ?>
 </head>
-<body>  	
+<body>	
 		<header>
 			<div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only right"><i class="material-icons small">menu</i></a></div>
 			<div class="carousel carousel-slider center" data-indicators="true">
@@ -84,7 +84,15 @@
 			    <div class="carousel-item amber white-text" href="#two!"><?php echo $this->Html->image('slide/'.$files[$slides[1]]) ?></div>
 			    <div class="carousel-item green white-text" href="#three!"><?php echo $this->Html->image('slide/'.$files[$slides[2]]) ?></div>
 			    <div class="carousel-item blue white-text" href="#four!"><?php echo $this->Html->image('slide/'.$files[$slides[3]]) ?></div>
-			</div>
+			</div>            
+            <div id="usermodal" class="modal">
+                <div class="modal-content">
+                    <h4>ورود کاربران</h4>
+                    <p><a class="waves-effect waves-light btn closemodal ajaxoff" href="<?php if($role_id == 1){echo $this->webroot.'users/logout';}else{echo $this->webroot.'users/login';} ?>">
+                        <?php if($role_id == 1){echo 'خروج';}else{echo 'ورود';} ?>                            
+                    </a></p>
+                </div>                
+            </div>
 			<?php echo $this->element('menu') ?>
 		</header>
 		<main>
@@ -144,17 +152,17 @@
 			<div class="container">
 				<div class="row">
 					<section class="col s12 m6 13 subscribe left">
-						<div class="row">
-							<div class="col s12 input-field">
-								<i class="material-icons prefix">email</i>
-								<input id="sub_email" type="email">
-          						<label for="sub_email" data-error="لطفا یک آدرس ایمیل معتبر وارد کنید" data-success="آدرس ایمیل معتبر است">آدرس ایمیل</label>
-							</div>
-							<div class="col s12">
-								<div class="btn waves-effect submit"><input type="submit" value="اشتراک در خبرنامه"><i class="material-icons right">send</i></div> 
-							</div>
-						</div>
-					</section>
+                        <div class="row">
+                            <?php echo $this->Form->create('Subscribe', array('url' => array('controller' => 'subscribes', 'action' => 'index'))); ?>
+                            <div class="col s12 input-field">
+                                <i class="material-icons prefix">email</i>
+                                <?php echo $this->Form->input('email', array('label' => 'آدرس ایمیل', 'type' => 'email', 'id' => 'sub_email', 'div' => false)); ?>
+                            </div>
+                            <div class="col s12">
+                                <div class="btn waves-effect submit"><?php echo $this->Form->end(array('label' => 'اشتراک در خبرنامه', 'div' => false)); ?><i class="material-icons right">send</i></div> 
+                            </div>
+                        </div>
+                    </section>
 					<section class="col s12 m6">
 						<div class="card blue-grey darken-1">
             				<div class="card-content white-text">              					

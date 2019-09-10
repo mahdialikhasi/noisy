@@ -22,15 +22,16 @@
                 $this->Contact->create();
                 if($this->Contact->save($this->request->data)){
                     $this->Session->setFlash('نامه ی شما با موفقیت ارسال گردید', 'default', array('class' => 'alert alert-success'));
+                    
+                    /*Email me the new Contact*/
                     $Email = new CakeEmail();
-		    $Email->from(array('info@noisy.ir' => 'دست نوشته های یک تازه کار'))
-    			->sender('info@noisy.ir', 'دست نوشته های یک تازه کار')
-    			->emailFormat('html')
-    			->template('default', 'default')
-			->to('mahdialikhasi1389@gmail.com')
-			->subject('نظر جدید')
-			->viewVars(array('content' => "شما نظر جدیدی در وبلاگ دست نوشته های یک تازه کار دارید"))
-			->send();
+                        $Email->from(array('info@noisy.ir' => 'دست نوشته های یک تازه کار'))
+                        ->to('mahdialikhasi1389@gmail.com')
+                        ->subject('تماس جدیدی با شما برقرار شده است')
+                        ->template('default', 'default')
+                        ->emailFormat('html')
+                        ->viewVars(array('title_for_layout'=> $this->request->data['Contact']['title'], 'content' => 'فرستنده: '.$this->request->data['Contact']['email'].'<br> نام و نام خانوادگی: '.$this->request->data['Contact']['fullname']. '<br> متن: <br>'.$this->request->data['Contact']['body']))
+                        ->send('My message');                            
                     $this->redirect('/');
                 }else{
                     $this->Session->setFlash('متاسفانه نامه ی شما ارسال نشد', 'default', array('class' => 'alert alert-success'));

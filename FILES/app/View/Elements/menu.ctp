@@ -33,6 +33,7 @@
                         <li class="bold"><a class="waves-effect waves-teal" href="<?php echo $this->webroot ?>roles/add">افزودن نقش کاربری</a></li>
                         <li class="bold"><a class="waves-effect waves-teal" href="<?php echo $this->webroot ?>comments/lists/">نظرات</a></li>
                         <li class="bold"><a class="waves-effect waves-teal" href="<?php echo $this->webroot ?>contacts/lists/">تماس ها</a></li>
+                        <li class="bold"><a class="waves-effect waves-teal" href="<?php echo $this->webroot ?>subscribes/lists/">خبرنامه</a></li>
                       </ul>
                     </div>
                   </li>

@@ -11,6 +11,7 @@ $this->Html->addCrumb('لیست دست نوشته ها', '/blogs/lists/', array(
             <th data-field="name">عنوان</th>
             <th data-field="created">تاریخ ایجاد</th>
             <th data-field="updated">تاریخ به روز رسانی</th>
+            <th data-field="drafts">پیشنویس؟</th>
             <th data-field="operation">عملیات</th>
         </tr>
     </thead>
@@ -22,6 +23,7 @@ $this->Html->addCrumb('لیست دست نوشته ها', '/blogs/lists/', array(
             echo '<td><h3 class="blogtitle"><a href="'.$this->webroot.'blogs/view/'.$data['Blog']['address'].'" class="blue-grey-text text-darken-4">'.$data['Blog']['title'].'</a></h3></td>';
             echo '<td>'.$data['Blog']['created'].'</td>';
             echo '<td>'.$data['Blog']['modified'].'</td>';
+            echo '<td>'.$data['Blog']['draft'].'</td>';
             echo '<td><a href="'.$this->webroot.'blogs/edit/'.$data['Blog']['address'].'">ویرایش</a>
             |'.$this->Form->Postlink('حذف', array('controller' => 'blogs', 'action' => 'delete', $data['Blog']['id']), array('confirm' => 'آیا مطمئنید که میخواهید این بلاگ را حذف کنید؟')).'</td>';
             echo '</tr>';

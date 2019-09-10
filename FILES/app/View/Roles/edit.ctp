@@ -3,7 +3,7 @@ $this->Html->addCrumb('نقش های کاربری', '/roles/', array('class' => 
 $this->Html->addCrumb('ویرایش نقش '.$data['Role']['name'], '/roles/edit/'.$data['Role']['id'], array('class' => 'breadcrumb'));
 ?>
 <h1 class="hide">نقش های کاربری</h1>
-<h2>افزودن نقش کاربری</h2>
+<h2>ویرایش نقش کاربری</h2>
 <section class="row roles">
     <div class="col s12">
         <div class="card">

@@ -53,7 +53,7 @@ class EmailConfig {
 		'port' => 25,
 		'timeout' => 30,
 		'username' => 'info',
-		'password' => 'masc_csam_6600',
+		'password' => '',
 		'client' => null,
 		'log' => false,
 		'charset' => 'utf-8',

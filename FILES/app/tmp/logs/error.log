@@ -10860,3 +10860,175 @@ Stack Trace:
 #3 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(902): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2016-08-31 17:31:17 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /noisy/img/gplus.png
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-09-01 08:43:15 Error: Fatal Error (4): syntax error, unexpected '}', expecting ',' or ';' in [C:\xampp\htdocs\noisy\app\View\Layouts\material.ctp, line 91]
+2016-09-01 08:43:15 Error: [FatalErrorException] syntax error, unexpected '}', expecting ',' or ';'
+Request URL: /noisy/
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 91)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 91, Array)
+#2 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 91, Array)
+#3 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-09-01 09:43:41 Error: [MissingControllerException] Controller class CvController could not be found.
+Exception Attributes: array (
+  'class' => 'CvController',
+  'plugin' => NULL,
+)
+Request URL: /noisy/cv
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-09-01 09:43:46 Error: [MissingControllerException] Controller class CvController could not be found.
+Exception Attributes: array (
+  'class' => 'CvController',
+  'plugin' => NULL,
+)
+Request URL: /noisy/cv
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-09-01 14:16:04 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\noisy\app\View\Layouts\material.ctp, line 162]
+2016-09-01 14:16:04 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /noisy/
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 162)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 162, Array)
+#2 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 162, Array)
+#3 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-09-01 14:16:17 Error: Fatal Error (64): Cannot redeclare class User in [C:\xampp\htdocs\noisy\app\Model\Subscribe.php, line 11]
+2016-09-01 14:16:17 Error: [FatalErrorException] Cannot redeclare class User
+Request URL: /noisy/
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'C:\xampp\htdocs...', 11)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'C:\xampp\htdocs...', 11, Array)
+#2 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'C:\xampp\htdocs...', 11, Array)
+#3 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-09-01 14:58:35 Error: [MissingControllerException] Controller class SubscrinesController could not be found.
+Exception Attributes: array (
+  'class' => 'SubscrinesController',
+  'plugin' => NULL,
+)
+Request URL: /noisy/subscrines/lists/
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-09-01 14:58:35 Error: [MissingControllerException] Controller class SubscrinesController could not be found.
+Exception Attributes: array (
+  'class' => 'SubscrinesController',
+  'plugin' => NULL,
+)
+Request URL: /noisy/subscrines/lists/
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-09-01 14:58:39 Error: [MissingControllerException] Controller class SubscrinesController could not be found.
+Exception Attributes: array (
+  'class' => 'SubscrinesController',
+  'plugin' => NULL,
+)
+Request URL: /noisy/subscrines/lists/
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-09-01 14:59:01 Error: [MissingControllerException] Controller class SubscrinesController could not be found.
+Exception Attributes: array (
+  'class' => 'SubscrinesController',
+  'plugin' => NULL,
+)
+Request URL: /noisy/subscrines/lists/
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-09-01 15:17:16 Error: [MissingViewException] View file "C:\xampp\htdocs\noisy\app\View\Subscribes\confirm.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\noisy\\app\\View\\Subscribes\\confirm.ctp',
+)
+Request URL: /noisy/subscribes/confirm/52o6qh9l4x
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\noisy\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\noisy\lib\Cake\Routing\Dispatcher.php(198): Controller->render()
+#3 C:\xampp\htdocs\noisy\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(SubscribesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-09-01 15:20:08 Error: [NotFoundException] آدرس اشتباه است. لطفا در وارد کردن آدرس دقت فرمایید
+Request URL: /noisy/subscribes/confirm/52o6qh9l4s
+Stack Trace:
+#0 [internal function]: SubscribesController->confirm('52o6qh9l4s')
+#1 C:\xampp\htdocs\noisy\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(SubscribesController), Array)
+#2 C:\xampp\htdocs\noisy\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\noisy\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(SubscribesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-09-01 15:20:14 Error: [NotFoundException] آدرس اشتباه است. لطفا در وارد کردن آدرس دقت فرمایید
+Request URL: /noisy/subscribes/confirm/52o6qh9l4s
+Stack Trace:
+#0 [internal function]: SubscribesController->confirm('52o6qh9l4s')
+#1 C:\xampp\htdocs\noisy\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(SubscribesController), Array)
+#2 C:\xampp\htdocs\noisy\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\noisy\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(SubscribesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-09-01 15:20:32 Error: [NotFoundException] آدرس اشتباه است. لطفا در وارد کردن آدرس دقت فرمایید
+Request URL: /noisy/subscribes/confirm/52o6qh9l4x
+Stack Trace:
+#0 [internal function]: SubscribesController->confirm('52o6qh9l4x')
+#1 C:\xampp\htdocs\noisy\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(SubscribesController), Array)
+#2 C:\xampp\htdocs\noisy\lib\Cake\Routing\Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\noisy\lib\Cake\Routing\Dispatcher.php(165): Dispatcher->_invoke(Object(SubscribesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-09-01 15:41:30 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [C:\xampp\htdocs\noisy\app\Controller\BlogsController.php, line 68]
+2016-09-01 15:41:30 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /noisy/blogs/add
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 68)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 68, Array)
+#2 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 68, Array)
+#3 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-09-01 15:42:17 Error: Fatal Error (1): Call to a member function subject() on a non-object in [C:\xampp\htdocs\noisy\app\Controller\BlogsController.php, line 65]
+2016-09-01 15:42:17 Error: [FatalErrorException] Call to a member function subject() on a non-object
+Request URL: /noisy/blogs/add
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 65)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 65, Array)
+#2 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\xampp\htdocs...', 65, Array)
+#3 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-09-01 15:43:14 Error: Fatal Error (1): Call to a member function subject() on a non-object in [C:\xampp\htdocs\noisy\app\Controller\BlogsController.php, line 65]
+2016-09-01 15:43:14 Error: [FatalErrorException] Call to a member function subject() on a non-object
+Request URL: /noisy/blogs/add
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 65)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 65, Array)
+#2 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\xampp\htdocs...', 65, Array)
+#3 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-09-01 15:44:06 Error: Fatal Error (1): Call to a member function subject() on a non-object in [C:\xampp\htdocs\noisy\app\Controller\BlogsController.php, line 66]
+2016-09-01 15:44:06 Error: [FatalErrorException] Call to a member function subject() on a non-object
+Request URL: /noisy/blogs/add
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 66, Array)
+#2 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\xampp\htdocs...', 66, Array)
+#3 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

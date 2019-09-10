@@ -25,6 +25,7 @@ class UsersController extends AppController {
         $this->redirect('/');
     }
     public function index() {
+        $this->set('title_for_layout', 'لیست کاربران');
         $this->User->recursive = 0;
         $this->set('users', $this->Paginator->paginate());
     }
@@ -34,6 +35,7 @@ class UsersController extends AppController {
         }
         $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
         $this->set('user', $this->User->find('first', $options));
+        $this->set('title_for_layout', 'مشاهده ی کاربر');
     }
     public function add() {
         if ($this->request->is('post')) {
@@ -46,8 +48,10 @@ class UsersController extends AppController {
             }
         }
         $this->set('roles', $this->User->Role->find('list'));
+        $this->set('title_for_layout', 'افزودن کاربر');
     }
     public function edit($id = null) {
+        $this->set('title_for_layout', 'ویرایش کاربر');
         if (!$this->User->exists($id)) {
             throw new NotFoundException(__('کاربر نامعتبر است'));
         }

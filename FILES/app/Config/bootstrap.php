@@ -71,7 +71,7 @@ Cache::config('default', array('engine' => 'File'));
  */
 App::uses('Folder', 'Utility');
 App::uses('File', 'Utility');
-
+App::uses('CakeEmail', 'Network/Email');
 
 CakePlugin::load('ShamsiDate');
 CakePlugin::load('Upload');

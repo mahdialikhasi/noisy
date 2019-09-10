@@ -4,7 +4,7 @@
             parent::beforeFilter();
             $this->Auth->allow('index', 'view', 'captcha');
         }
-        public $uses = array('Tag', 'Blog');
+        public $uses = array('Tag', 'Blog','Subscribe');
         public $components = array('Email', 'ShamsiDate.Shamsi', 'Paginator','Captcha'=>array('field'=>'security_code'));
         public $helpers = array('ShamsiDate.Shamsi','Captcha');
         public function index(){
@@ -17,7 +17,7 @@
             );
             $datas = $this->Paginator->paginate('Blog');//$this->Blog->find('all', array('limit' => '10', 'order' => 'created DESC'));
             $this->set('datas', $datas);
-            $this->set('title_for_layout', 'دست نوشته ها');
+            $this->set('title_for_layout', 'دست نوشته ها');           
         }
         public function captcha(){
 	        $this->autoRender = false;
@@ -52,6 +52,26 @@
                 $this->Blog->create();
                 if($this->Blog->save($this->request->data)){
                     $this->Session->setFlash(__('دست نوشته با موفقیت افزوده شد'), 'default', array('class' => 'alert alert-success'));
+                    
+                    /*Email Subscribes new post is ready*/
+                    if($this->request->data['Blog']['draft'] == 0){
+                        $subscribes = $this->Subscribe->find('all', array('conditions' => array('confirmed' => 1)));
+                        $mail = array();
+                        $i=1;
+                        foreach ($subscribes as $subscribe) {
+                            $mail[$i] = $subscribe['Subscribe']['email'];
+                            $i++;
+                        }             
+                        $Email = new CakeEmail();
+                            $Email->from(array('info@noisy.ir' => 'دست نوشته های یک تازه کار'))
+                            ->to($mail)
+                            ->subject('تماس جدیدی با شما برقرار شده است')
+                            ->template('default', 'default')
+                            ->emailFormat('html')
+                            ->viewVars(array('title_for_layout'=> $this->request->data['Blog']['title'], 'content' => 'مطلب جدید در دست نوشته های یک تازه کار منتشر شده است! <br> همین الان آن را مطالعه کنید: <br><a href="http://noisy.ir/blogs/view/'.str_replace(' ', '-',$this->request->data['Blog']['title']).'">'.$this->request->data['Blog']['title'].'</a><br>'.$this->request->data['Blog']['description']. '<br>'))
+                            ->send('My message');
+                    }                   
+
                     $this->redirect('/blogs');
                 }else{
                     $this->Session->setFlash(__('متاسفانه دست نوشته ذخیره نشد'), 'default', array('class' => 'alert alert-success'));
@@ -79,14 +99,16 @@
                 $this->Blog->Comment->create();
                 if($this->Blog->Comment->save($this->request->data)){
                     $this->Session->setFlash(__('نظرشما با موفقیت ارسال شد'), 'default', array('class' => 'alert alert-success'));
+                    
+                    /*Email me the new Comment*/
                     $Email = new CakeEmail();
-		    $Email->from(array('info@noisy.ir' => 'دست نوشته های یک تازه کار'))
-    			->sender('info@noisy.ir', 'دست نوشته های یک تازه کار')
-    			->emailFormat('html')
-    			->template('default', 'default')
-			->to('mahdialikhasi1389@gmail.com')
-			->subject('نظر جدید')
-			->send("شما نظر جدیدی در وبلاگ دست نوشته های یک تازه کار دارید");
+                        $Email->from(array('info@noisy.ir' => 'دست نوشته های یک تازه کار'))
+                        ->to('mahdialikhasi1389@gmail.com')
+                        ->subject('تماس جدیدی با شما برقرار شده است')
+                        ->template('default', 'default')
+                        ->emailFormat('html')
+                        ->viewVars(array('title_for_layout'=> 'نظر جدید', 'content' => 'فرستنده: '.$comment_content['email'].'<br> نام و نام خانوادگی: '.$comment_content['name']. '<br> متن: <br>'.$comment_content['body']))
+                        ->send('My message');                            
                 }else{
                     $this->Session->setFlash(__('متاسفانه نظر شما ارسال نشد'), 'default', array('class' => 'alert alert-danger'));
                 }
@@ -99,12 +121,39 @@
             }
             $data = $this->Blog->find('all', array('conditions' => array('address' => $address)));
             $data = $data[0];
+            if($data['Blog']['draft'] == 1){
+                $status = 1;
+            }else{
+                $status = 0;
+            }
             if(!$data){
                 throw new NotFoundException(__('آدرس اشتباه است. لطفا در وارد کردن آدرس دقت فرمایید'));
             }
             if($this->request->is('post') || $this->request->is('put')){
                 if($this->Blog->save($this->request->data)){
-                    $this->Session->setFlash(__('دست نوشته با موفقیت افزوده شد'), 'default', array('class' => 'alert alert-success'));
+                    $this->Session->setFlash(__('دست نوشته با موفقیت ویرایش شد'), 'default', array('class' => 'alert alert-success'));
+
+                    /*Email Subscribes new post is ready*/
+                    if($status == 1){
+                        if($this->request->data['Blog']['draft'] == 0){
+                            $subscribes = $this->Subscribe->find('all', array('conditions' => array('confirmed' => 1)));
+                            $mail = array();
+                            $i=1;
+                            foreach ($subscribes as $subscribe) {
+                                $mail[$i] = $subscribe['Subscribe']['email'];
+                                $i++;
+                            }             
+                            $Email = new CakeEmail();
+                                $Email->from(array('info@noisy.ir' => 'دست نوشته های یک تازه کار'))
+                                ->to($mail)
+                                ->subject('تماس جدیدی با شما برقرار شده است')
+                                ->template('default', 'default')
+                                ->emailFormat('html')
+                                ->viewVars(array('title_for_layout'=> $this->request->data['Blog']['title'], 'content' => 'مطلب جدید در دست نوشته های یک تازه کار منتشر شده است! <br> همین الان آن را مطالعه کنید: <br><a href="http://noisy.ir/blogs/view/'.str_replace(' ', '-',$this->request->data['Blog']['title']).'">'.$this->request->data['Blog']['title'].'</a><br>'.$this->request->data['Blog']['description']. '<br>'))
+                                ->send('My message');
+                        }   
+                    }                   
+
                     $this->redirect('/blogs');
                 }else{
                     $this->Session->setFlash(__('متاسفانه دست نوشته ذخیره نشد'), 'default', array('class' => 'alert alert-success'));

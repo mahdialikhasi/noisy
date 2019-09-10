@@ -1,22 +1,34 @@
-<div class="users form">
-<?php echo $this->Form->create('User'); ?>
-	<fieldset>
-		<legend><?php echo __('افزودن کاربر'); ?></legend>
-	<?php
-		echo $this->Form->input('first_name', array('label' => 'نام'));
-		echo $this->Form->input('last_name', array('label' => 'نام خانوادگی'));
-		echo $this->Form->input('username', array('label' => 'نام کاربری'));
-		echo $this->Form->input('password', array('label' => 'رمزعبور'));
-		echo $this->Form->input('email');
-		echo $this->Form->input('role_id');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('افزودن کاربر')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('عملیات'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('لیست کاربران'), array('action' => 'index')); ?></li>
-	</ul>
-</div>
+<?php
+$this->Html->addCrumb('کاربران', '/users/', array('class' => 'breadcrumb'));
+$this->Html->addCrumb('افزودن کاربر', '/users/add/', array('class' => 'breadcrumb'));
+?>
+<h1 class="hide">کاربران سایت</h1>
+<h2>افزودن کاربر</h2>
+<section class="row users">
+    <div class="col s12">
+        <div class="card">
+            <?php
+            echo $this->Form->create('User');
+            ?>
+            <div class="card-content blue-grey-text text-darken-4">
+                <span class="card-title">افزودن کاربر</span>
+                <?php                
+                echo $this->Form->input('first_name', array('label' => 'نام', 'div' => 'input-field'));
+				echo $this->Form->input('last_name', array('label' => 'نام خانوادگی', 'div' => 'input-field'));
+				echo $this->Form->input('username', array('label' => 'نام کاربری', 'div' => 'input-field'));
+				echo $this->Form->input('password', array('label' => 'رمزعبور', 'div' => 'input-field'));
+				echo $this->Form->input('email', array('label' => 'ایمیل', 'div' => 'input-field'));
+				echo $this->Form->input('role_id', array('label' => '', 'div' => 'input-field'));
+                ?>
+            </div>
+            <div class="card-action">
+                <?php echo $this->Form->end(array('label' => 'افزودن کاربر', 'div' => array('class' => "btn waves-effect submit submitdiv"))); ?>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+	$(document).ready(function() {
+    	$('select').material_select();
+  	});
+</script>

@@ -13,6 +13,7 @@ class AppController extends Controller {
         ),
         'Session'
     );
+    public $uses = array('Subscribe');
     public function beforeFilter(){
         parent::beforeFilter();
         $this->layout ='material';
