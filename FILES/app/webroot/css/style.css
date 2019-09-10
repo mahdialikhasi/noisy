@@ -575,15 +575,20 @@ span.work-body .weblink a{
 /**/
 h3.contact-body ul.sociallinks li {
     display: inline-block;
-    width: 24%;
+    width: 19%;
     text-align: center;
+}
+.github{
+  background-color: #4078c0 !important;
 }
 .sociallinks .btn-floating{
 	width: 55px;
     height: 55px;
     padding-top: 3px;
 }
-
+.cke_pbckcode_ace .ace_scroller{
+  text-align: left;
+}
 /*Small size fix*/
 @media only screen and (max-width : 585px) {
 	.carousel.carousel-slider{

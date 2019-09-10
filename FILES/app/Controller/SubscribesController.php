@@ -13,6 +13,17 @@ class SubscribesController extends AppController {
             $this->Subscribe->create();
             if ($this->Subscribe->save($this->request->data)) {
                 $this->Session->setFlash(__('شما در خبرنامه عضو شدید'), 'default', array('class' => 'alert alert-success'));
+
+                /*Email the confirm url*/
+                $Email = new CakeEmail();
+                    $Email->from(array('info@noisy.ir' => 'دست نوشته های یک تازه کار'))
+                    ->to($this->request->data['Subscribe']['email'])
+                    ->subject('اشتراک در خبرنامه')
+                    ->template('default', 'default')
+                    ->emailFormat('html')
+                    ->viewVars(array('title_for_layout'=> 'اشتراک در خبرنامه', 'content' => 'شما با موفقیت در خبرنامه ی وبلاگ من مشترک شده اید! <br> اما صبر کنید! هنوز یک مرحله ی دیگه باقی مونده. روی لینک زیر کلیک کنید تا ایمیل شما تایید بشه <br><a href="http://noisy.ir/subscribes/confirm/'.$this->request->data['Subscribe']['random'].'">تایید ایمیل</a>'))
+                    ->send('My message');
+
                 return $this->redirect('/');
             } else {
                 $this->Session->setFlash($this->Subscribe->validationErrors['email'][0], 'default', array('class' => 'alert alert-success'));

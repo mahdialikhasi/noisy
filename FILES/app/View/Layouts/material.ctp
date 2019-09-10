@@ -39,9 +39,9 @@
     <meta property="og:description" content="این وبلاگ، محلی برای نوشتن تجربیات و دست نوشته های یک تازه کار می باشد!">
     <meta name="DCTERMS.License" content="creative commons v3.0">
     <meta name="DCTERMS.RightsHolder" content="Mahdi Alikhasi">
-    <meta name="theme-color" content="#4285f4">
-    <meta name="msapplication-navbutton-color" content="#4285f4">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#4285f4">
+    <meta name="theme-color" content="#546e7a">
+    <meta name="msapplication-navbutton-color" content="#546e7a">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#546e7a">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="<?php echo $title_for_layout.' | دست نوشته های یک تازه کار';?>">
     <?php

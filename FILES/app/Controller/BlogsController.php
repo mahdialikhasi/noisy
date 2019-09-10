@@ -65,7 +65,7 @@
                         $Email = new CakeEmail();
                             $Email->from(array('info@noisy.ir' => 'دست نوشته های یک تازه کار'))
                             ->to($mail)
-                            ->subject('تماس جدیدی با شما برقرار شده است')
+                            ->subject('پست جدیدی در وبلاگ من ارسال شده!')
                             ->template('default', 'default')
                             ->emailFormat('html')
                             ->viewVars(array('title_for_layout'=> $this->request->data['Blog']['title'], 'content' => 'مطلب جدید در دست نوشته های یک تازه کار منتشر شده است! <br> همین الان آن را مطالعه کنید: <br><a href="http://noisy.ir/blogs/view/'.str_replace(' ', '-',$this->request->data['Blog']['title']).'">'.$this->request->data['Blog']['title'].'</a><br>'.$this->request->data['Blog']['description']. '<br>'))
@@ -104,7 +104,7 @@
                     $Email = new CakeEmail();
                         $Email->from(array('info@noisy.ir' => 'دست نوشته های یک تازه کار'))
                         ->to('mahdialikhasi1389@gmail.com')
-                        ->subject('تماس جدیدی با شما برقرار شده است')
+                        ->subject('نظر جدیدی در وبلاگ دارید!')
                         ->template('default', 'default')
                         ->emailFormat('html')
                         ->viewVars(array('title_for_layout'=> 'نظر جدید', 'content' => 'فرستنده: '.$comment_content['email'].'<br> نام و نام خانوادگی: '.$comment_content['name']. '<br> متن: <br>'.$comment_content['body']))
@@ -146,7 +146,7 @@
                             $Email = new CakeEmail();
                                 $Email->from(array('info@noisy.ir' => 'دست نوشته های یک تازه کار'))
                                 ->to($mail)
-                                ->subject('تماس جدیدی با شما برقرار شده است')
+                                ->subject('پست جدیدی در وبلاگ من ارسال شده!')
                                 ->template('default', 'default')
                                 ->emailFormat('html')
                                 ->viewVars(array('title_for_layout'=> $this->request->data['Blog']['title'], 'content' => 'مطلب جدید در دست نوشته های یک تازه کار منتشر شده است! <br> همین الان آن را مطالعه کنید: <br><a href="http://noisy.ir/blogs/view/'.str_replace(' ', '-',$this->request->data['Blog']['title']).'">'.$this->request->data['Blog']['title'].'</a><br>'.$this->request->data['Blog']['description']. '<br>'))

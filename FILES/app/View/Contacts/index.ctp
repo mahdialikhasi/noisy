@@ -29,6 +29,7 @@ $this->Html->addCrumb('ارتباط با من', '/contacts/', array('class' => '
                         <ul class="sociallinks">
                             <li><a href="https://twitter.com/mahdialikhasi" class="waves-effect waves-light btn-floating light-blue lighten-1"><?php echo $this->Html->image('twitter.png') ?></a></li>
                             <li><a href="https://plus.google.com/+MahdiAlikhasi" class="waves-effect waves-light btn-floating red"><?php echo $this->Html->image('gplus.png') ?></a></li>
+                            <li><a href="https://github.com/mahdialikhasi/" class="waves-effect waves-light btn-floating github"><?php echo $this->Html->image('github.png') ?></a></li>
                             <li><a href="https://www.instagram.com/mahdialikhasi/" class="waves-effect waves-light btn-floating grey lighten-1"><?php echo $this->Html->image('instagram.png') ?></a></li>
                             <li><a href="https://telegram.me/mahdialikhasi" class="waves-effect waves-light btn-floating light-blue darken-2"><?php echo $this->Html->image('telegram.png') ?></a></li>
                         </ul>                   
