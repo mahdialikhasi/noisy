@@ -2,16 +2,15 @@
 <html>
 <head>
     <?php echo $this->Html->charset(); ?>
-    <title>
-        <?php
+    <title><?php
         if((isset($page)) && ($page == 'home')){
+            $title_for_layout = 'خانه';
             echo 'دست نوشته های یک تازه کار';
         }else{
             echo $title_for_layout;
             echo ' | دست نوشته های یک تازه کار';            
         }
-        ?>
-    </title>
+        ?></title>
     <?php
     echo $this->Html->meta('icon');
     echo $this->fetch('meta');
@@ -23,7 +22,7 @@
     <meta name="description" content="این وبلاگ، محلی برای نوشتن تجربیات و دست نوشته های یک تازه کار می باشد!">
     <meta name="Designer" content="مهدی علی خاصی, Mahdi Alikhasi">
     <meta name="Author" content="مهدی علی خاصی, Mahdi Alikhasi">    
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="DC.Title" content="دست نوشته های یک تازه کار">
     <meta name="DC.Creator" content="Mahdi Alikhasi">
     <meta name="DC.Subject" content="دست نوشته, تازه, تازه کار, وبلاگ, بلاگ, آموزش, تجربه, مهدی علی خاصی, پی اچ پی, جاوااسکریپت, وب, web, javascript, php, mysql, cakephp, HTML, CSS, drupal">
@@ -31,11 +30,29 @@
     <meta name="DC.Publisher" content="Mahdi Alikhasi">
     <meta name="DC.Type" scheme="DCTERMS.DCMIType" content="Text,Image">
     <meta name="DC.Language" content="fa">
+    <meta property="og:type" content="article">
+    <?php $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";?><meta property="og:title" content="<?php echo $title_for_layout.' | دست نوشته های یک تازه کار';?>">
+    <meta property="og:url" content="<?php echo $actual_link;?>">
+    <meta property="og:site_name" content="دست نوشته های یک تازه کار">
+    <meta property="og:description" content="این وبلاگ، محلی برای نوشتن تجربیات و دست نوشته های یک تازه کار می باشد!">
     <meta name="DCTERMS.License" content="creative commons v3.0">
     <meta name="DCTERMS.RightsHolder" content="Mahdi Alikhasi">
     <meta name="theme-color" content="#4285f4">
     <meta name="msapplication-navbutton-color" content="#4285f4">
     <meta name="apple-mobile-web-app-status-bar-style" content="#4285f4">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="<?php echo $title_for_layout.' | دست نوشته های یک تازه کار';?>">   
+    <?php
+    mb_regex_encoding('UTF-8');
+    mb_internal_encoding("UTF-8"); 
+    if(isset($twitter_description)){
+    $len = 190;
+    echo '<meta name="twitter:description" content="'.preg_split('/(?<=\G.{'.$len.'})/u', str_replace("  ", " ", str_replace("  ", " ", str_replace(array("\n", "\r"), ' ', trim(strip_tags($twitter_description))))),-1,PREG_SPLIT_NO_EMPTY)[0].'">';
+    }else{
+    echo '<meta name="twitter:description" content="این وبلاگ، محلی برای نوشتن تجربیات و دست نوشته های یک تازه کار می باشد!">';
+    }
+    ?> 
+    <meta name="twitter:creator" content="@MahdiAlikhasi">
     <style type="text/css">
         #loading{
             display: block;
@@ -81,7 +98,7 @@
             <h4 class="heading">با من در ارتباط باشید</h4>
             <ul class="myContacts">
                 <li>
-                    <a href="https://www.linkedin.com/in/mahdialikhasi">
+                    <a href="https://www.linkedin.com/in/mahdialikhasi?rel=author">
                         <span class="name">Linkedin</span>
                         <span class="icon linkedin"></span>
                     </a>
@@ -93,7 +110,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://plus.google.com/+MahdiAlikhasi">
+                    <a href="https://plus.google.com/+MahdiAlikhasi?rel=author">
                         <span class="name">G+</span>
                         <span class="icon gplus"></span>
                     </a>

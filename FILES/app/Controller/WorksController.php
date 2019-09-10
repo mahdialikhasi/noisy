@@ -23,6 +23,7 @@
             if(!$data){
                 throw new NotFoundException(__('آدرس اشتباه است. لطفا در وارد کردن آدرس دقت فرمایید'));
             }
+            $this->set('title_for_layout', $data[0]['Work']['name']);
             $this->set('data', $data);
         }
         public function edit($address){

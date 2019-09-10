@@ -26,8 +26,10 @@
             foreach($data['Comment'] as $comment){
                 //print_r($comment);
                 if(empty($comment['commentid'])){
-                    echo '<li id="comment-'.$comment['id'].'" class="comment">';
-                    echo '<div class="avatar">'.$this->Html->image('noavatar.png', array('alt' => 'آواتار')).'</div>';
+                    echo '<li id="comment-'.$comment['id'].'" class="comment">';                                    
+		    $default = "mm";   		    
+		    $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $comment['email'] ) ) ) . "?d=" . urlencode( $default ) . "&s=50";
+                    echo '<div class="avatar">'.$this->Html->image($grav_url, array('alt' => 'آواتار')).'</div>';
                     echo '<div class="commentBody">';
                     $commentCreated = $this->Shamsi->date('l j F Y', strtotime($comment['created']), false, null);
                     echo '<div class="commentUserName"><span class="name">'.htmlspecialchars($comment['name']).' </span><span class="commentDate">'.$commentCreated.'</span><span class="answer"><a data-toggle="collapse" class="notAjax" comment="'.$comment['id'].'" data-parent="#accordion" href="#panelComment">ارسال پاسخ</a></span></div>';
@@ -37,7 +39,9 @@
                     foreach($data['Comment'] as $comment2){
                         if(!empty($comment2['commentid']) && ($comment2['commentid'] == $comment['id'])){
                             echo '<li id="comment-'.$comment2['id'].'" class="comment comment-answered">';
-                            echo '<div class="avatar">'.$this->Html->image('noavatar.png', array('alt' => 'آواتار')).'</div>';
+                            $default = "mm";   		    
+		    	    $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $comment2['email'] ) ) ) . "?d=" . urlencode( $default ) . "&s=45";
+		    	    echo '<div class="avatar">'.$this->Html->image($grav_url, array('alt' => 'آواتار')).'</div>';
                             echo '<div class="commentBody">';
                             $commentCreated = $this->Shamsi->date('l j F Y', strtotime($comment2['created']), false, null);
                             echo '<div class="commentUserName"><span class="name">'.htmlspecialchars($comment2['name']).' </span><span class="commentDate">'.$commentCreated.'</span></div>';
@@ -96,4 +100,3 @@ $(document).ready(function() {
   });
 });
 </script>
-

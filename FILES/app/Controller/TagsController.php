@@ -18,16 +18,11 @@
             }
             $data = $this->Tag->find('all', array('conditions' => array('name' => $tagName)));
             $data = $data[0];
+            $this->set('title_for_layout', $data['Tag']['name']);
             if(!$data){
                 throw new NotFoundException(__('هیچ مطلبی با چنین تگی یافت نشد'));
             }
-            $data2 = $this->BlogsTags->find('all', array('order' => 'blog_id DESC', 'conditions' => array('tag_id' => $data['Tag']['id'])));
-            /*$i =0;
-            foreach($data2 as $data2){
-                $id = $data2['BlogsTags']['blog_id'];
-                $Blogdata[$i] = $this->Blog->findById($id);
-                $i++;
-            }*/
+            $data2 = $this->BlogsTags->find('all', array('order' => 'blog_id DESC', 'conditions' => array('tag_id' => $data['Tag']['id'])));            
             $i =0;
             foreach($data2 as $data2){
                 $ids[$i] = $data2['BlogsTags']['blog_id'];
@@ -38,7 +33,7 @@
                 'order' => 'created DESC',
                 'conditions' => array('id' => $ids)
             );
-            $Blogdata = $this->Paginator->paginate('Blog');//$this->Blog->find('all', array('conditions' => array('id' => $ids), 'order' => 'created DESC'));
+            $Blogdata = $this->Paginator->paginate('Blog');
             $this->set('datas', $Blogdata);
             $this->set('data', $data);
         }

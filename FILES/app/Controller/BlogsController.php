@@ -67,9 +67,10 @@
             $data = $this->Blog->find('all', array('conditions' => array('address' => $address)));            
             if(!$data){
                 throw new NotFoundException(__('آدرس اشتباه است. لطفا در وارد کردن آدرس دقت فرمایید'));
-            }
+            }            
             $this->set('data', $data);
             $this->set('title_for_layout', $data[0]['Blog']['title']);
+            $this->set('twitter_description',$data[0]['Blog']['description']);
             if($this->request->is('post') && isset($this->request->data['Comment'])){
                 $this->request->data['Comment']['blog_id'] = $data[0]['Blog']['id'];
                 $comment_content = $this->request->data['Comment'];

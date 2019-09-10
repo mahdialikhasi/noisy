@@ -37,6 +37,9 @@ class SitemapBehavior extends ModelBehavior {
 	public function buildUrl(Model $Model, $primaryKey) {
 		return Router::url(array('plugin' => NULL, 'controller' => Inflector::tableize($Model->name), 'action' => 'view', $primaryKey), TRUE);
 	}
+	public function buildTagUrl(Model $Model, $primaryKey) {
+		return Router::url(array('plugin' => NULL, 'controller' => Inflector::tableize($Model->name), 'action' => 'search', $primaryKey), TRUE);
+	}
 
 	/**
 	 * generateSitemapData - generate the sitemap data, attempting to hit the cache for this data

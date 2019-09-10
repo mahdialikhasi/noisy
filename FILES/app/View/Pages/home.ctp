@@ -1,7 +1,3 @@
-<?php
-	//print_r($data_blogs);
-	//print_r($data_works);
-?>
 <section class="myWorksSelected">
 	<h2>
 		چند تا از نمونه کار های من
@@ -34,7 +30,8 @@
 	<div id="lastBlogs">
 	<?php
 		foreach($data_blogs as $blog){
-			$description = str_split($blog['Blog']['description'], 560);
+			$len = 350;
+			$description = preg_split('/(?<=\G.{'.$len.'})/u',$blog['Blog']['description'],-1,PREG_SPLIT_NO_EMPTY);
 			$description = $description[0] . '...';
 			echo '
 			<article class="lastBlogContent lastBlog'.$blog['Blog']['id'].'">
@@ -46,24 +43,3 @@
 	?>
 	</div>
 </section>
-<script type="text/javascript">
-	var text;
-	function removeBadChar(){
-		$('.lastBlogContent .blog-description *:last-child').each(function(){
-			text = $(this).text();
-			if ( text[text.length -4]== '�' ){
-				$(this).text(function(_,txt){
-	                    		return txt.slice(0, -5);
-	                	});         
-	                	text = $(this).text();   
-	                	$(this).text(function(_,txt){
-	                    		return text + '...';
-	                	});    	
-			}
-		});
-	}
-	removeBadChar();		
-</script>
-<?php
-	//echo $this->Html->script('ho');
-?>
