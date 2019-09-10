@@ -2,16 +2,18 @@
 $this->Html->addCrumb('دست نوشته ها', '/blogs/', array('class' => 'breadcrumb'));
 $this->Html->addCrumb('افزودن دست نوشته', '/blogs/add/', array('class' => 'breadcrumb'));
 ?>
-<h1 class="hide">ویرایش دست نوشته</h1>
+<h1 class="hide">افزودن دست نوشته</h1>
 <div class="row">
     <h2>افزودن دست نوشته</h2>
     <div class="col s12">
         <div class="card">
+            <?php 
+            echo $this->Html->script('ckeditor/ckeditor');
+            echo $this->Form->create('Blog'); 
+            ?>
             <div class="card-content black-text">
                 <span class="card-title">افزودن دست نوشته</span>
-                <?php
-                echo $this->Html->script('ckeditor/ckeditor');
-                echo $this->Form->create('Blog');                
+                <?php                               
                 echo $this->Form->input('title', array('label' => 'عنوان', 'div' => array('class' => "input-field ".($this->Form->isFieldError('title') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
                 echo $this->Form->input('description', array('label' => 'خلاصه', 'class' => 'ckeditor', 'div' => array('class' => "input-field ".($this->Form->isFieldError('description') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
                 echo $this->Form->input('body', array('label' => 'متن کامل', 'class' => 'ckeditor', 'div' => array('class' => "input-field ".($this->Form->isFieldError('body') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
@@ -21,7 +23,7 @@ $this->Html->addCrumb('افزودن دست نوشته', '/blogs/add/', array('cl
             </div>
             <div class="card-action">
                 <?php
-                echo $this->Form->end(array('label' => 'ویرایش دست نوشته', 'div' => array('class' => "btn waves-effect submit submitdiv")));
+                echo $this->Form->end(array('label' => 'افزودن دست نوشته', 'div' => array('class' => "btn waves-effect submit submitdiv")));
                 ?>
             </div>
         </div>
@@ -71,4 +73,6 @@ $this->Html->addCrumb('افزودن دست نوشته', '/blogs/add/', array('cl
         }
     });
     $("#ui-id-1").appendTo(".tagdiv");
+    CKEDITOR.replace( 'data[Blog][body]' );
+    CKEDITOR.replace( 'data[Blog][description]' );
 </script>

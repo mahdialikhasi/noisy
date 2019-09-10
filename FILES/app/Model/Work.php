@@ -30,6 +30,14 @@
                 'rule' => 'notEmpty',
                 'message' => 'لطفا یک عنوان برای نمونه کار خود انتخاب کنید'
             ),
+            'platform' => array(
+                'rule' => 'notEmpty',
+                'message' => 'پلتفرمی که برای این ساختار استفاده کرده اید را وارد کنید'
+            ),
+            'technos' => array(
+                'rule' => 'notEmpty',
+                'message' => 'تکنولوژی های مورد استفاده را وارد کنید'
+            ),
             'address' => array(
                 'rule' => 'isUnique',
                 'message' => 'آدرس شما قبلا وجود دارد. لطفا یک عنوان دیگر انتخاب کنید'

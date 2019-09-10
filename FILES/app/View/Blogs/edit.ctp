@@ -8,11 +8,13 @@ $this->Html->addCrumb('ویرایش', '/blogs/edit/'.$data['Blog']['address'], a
     <h2>ویرایش</h2>
     <div class="col s12">
         <div class="card">
-            <div class="card-content black-text">
-                <span class="card-title"><?php echo $data['Blog']['title'] ?></span>
-                <?php
+            <?php
                 echo $this->Html->script('ckeditor/ckeditor');
                 echo $this->Form->create('Blog');
+            ?>
+            <div class="card-content black-text">
+                <span class="card-title"><?php echo $data['Blog']['title'] ?></span>
+                <?php                
                 echo $this->Form->input('id', array('type' => 'hidden'));
                 echo $this->Form->input('title', array('label' => 'عنوان', 'div' => array('class' => "input-field ".($this->Form->isFieldError('title') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
                 echo $this->Form->input('description', array('label' => 'خلاصه', 'class' => 'ckeditor', 'div' => array('class' => "input-field ".($this->Form->isFieldError('description') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
@@ -33,3 +35,8 @@ $this->Html->addCrumb('ویرایش', '/blogs/edit/'.$data['Blog']['address'], a
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    CKEDITOR.replace( 'data[Blog][body]' );
+    CKEDITOR.replace( 'data[Blog][description]' );
+    $('select').material_select();
+</script>

@@ -6,10 +6,10 @@ $this->Html->addCrumb('ارتباط با من', '/contacts/', array('class' => '
 <section class="row contacts">
     <div class="col s12">
         <div class="card">
+            <?php echo $this->Form->create('Contact'); ?>
             <div class="card-content blue-grey-text text-darken-4">
                 <span class="card-title">تماس با من</span>
-                <?php
-                echo $this->Form->create('Contact');
+                <?php                
                 echo $this->Form->input('title', array('label' => 'عنوان', 'div' => array('class' => "input-field ".($this->Form->isFieldError('title') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
                 echo $this->Form->input('fullname', array('label' => 'نام و نام خانوادگی', 'div' => array('class' => "input-field ".($this->Form->isFieldError('fullname') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
                 echo $this->Form->input('email', array('label' => 'آدرس ایمیل', 'div' => array('class' => "input-field ".($this->Form->isFieldError('email') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));

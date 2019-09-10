@@ -45,6 +45,7 @@
                 }
             }
             $this->request->data = $data;
+            $this->set('data', $data);
         }
         public function delete($id){
             if(!$this->Work->exists($id)){

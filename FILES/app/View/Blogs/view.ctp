@@ -8,6 +8,9 @@ $this->Html->addCrumb('دست نوشته ها', '/blogs/', array('class' => 'bre
         $this->Html->addCrumb($data['Blog']['title'], '/blogs/view/'.$data['Blog']['address'], array('class' => 'breadcrumb'));
         echo '<article class="blog-view">';
             echo '<h2 class="flow-text"><a class="blog-link blue-grey-text text-darken-4" href="'.$this->webroot.'blogs/view/'.$data['Blog']['address'].'">'.$data['Blog']['title'].'</a></h2>';
+            if($role_id == 1){
+                echo '<p class="right edit"><a class="blog-link blue-grey-text text-darken-4" href="'.$this->webroot.'blogs/edit/'.$data['Blog']['address'].'"><i class="material-icons">mode_edit</i></a></p>';
+            }
             $created = $this->Shamsi->date('l j F Y', strtotime($data['Blog']['created']), false, null);
             echo '<h4 class="blog-date">'.$created.'</h4>';
             echo '<h3 class="flow-text blog-body"'.$data['Blog']['body'].'</h3></article>';
@@ -75,10 +78,10 @@ $this->Html->addCrumb('دست نوشته ها', '/blogs/', array('class' => 'bre
         echo '</section>';
         echo '<section class="row sendcomment">
             <div class="col s12">
-                <div class="card">
-                    <div class="card-content blue-grey-text text-darken-4">
-                        <span class="card-title">ارسال نظر</span>';
-                        echo $this->Form->create('Comment', array('url' => array('controller' => 'blogs', 'action' => 'view', $data['Blog']['address'])));
+                <div class="card">';
+                    echo $this->Form->create('Comment', array('url' => array('controller' => 'blogs', 'action' => 'view', $data['Blog']['address'])));
+                    echo '<div class="card-content blue-grey-text text-darken-4">
+                        <span class="card-title">ارسال نظر</span>';                        
                         echo $this->Form->input('name', array('label' => 'نام و نام خانوادگی', 'div' => array('class' => "input-name input-field ".($this->Form->isFieldError('name') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
                         echo $this->Form->input('email', array('label' => 'آدرس ایمیل', 'div' => array('class' => "input-mail input-field ".($this->Form->isFieldError('email') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));
                         echo $this->Form->input('commentid', array('div' => array('class' => "hide input-field ".($this->Form->isFieldError('commentid') ? 'has-error' : '') ), 'error' => array('attributes' => array('wrap' => 'p', 'class' => 'help-block has-error'))));

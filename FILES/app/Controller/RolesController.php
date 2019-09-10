@@ -8,6 +8,7 @@ class RolesController extends AppController {
 	public function index() {
 		$this->Role->recursive = 0;
 		$this->set('roles', $this->Paginator->paginate());
+		$this->set('title_for_layout', 'نقش های کاربری');
 	}
 	public function view($id = null) {
 		if (!$this->Role->exists($id)) {
@@ -15,6 +16,7 @@ class RolesController extends AppController {
 		}
 		$options = array('conditions' => array('Role.' . $this->Role->primaryKey => $id));
 		$this->set('role', $this->Role->find('first', $options));
+		$this->set('title_for_layout', 'مشاهده ی نقش کاربری');
 	}
 	public function add() {
 		if ($this->request->is('post')) {
@@ -26,6 +28,7 @@ class RolesController extends AppController {
 				$this->Session->setFlash(__('The role could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-success'));
 			}
 		}
+		$this->set('title_for_layout', 'افزودن نقش کاربری');
 	}
 	public function edit($id = null) {
 		if (!$this->Role->exists($id)) {
@@ -40,8 +43,11 @@ class RolesController extends AppController {
 			}
 		} else {
 			$options = array('conditions' => array('Role.' . $this->Role->primaryKey => $id));
-			$this->request->data = $this->Role->find('first', $options);
+			$data = $this->Role->find('first', $options);
+			$this->request->data = $data;
+			$this->set('data',$data);
 		}
+		$this->set('title_for_layout', 'ویرایش نقش کاربری');
 	}
 	public function delete($id = null) {
 		$this->Role->id = $id;

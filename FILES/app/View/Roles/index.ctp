@@ -1,42 +1,35 @@
-<div class="roles index">
-	<h2><?php echo __('Roles'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
-	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('name'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
-	</tr>
-	<?php foreach ($roles as $role): ?>
-	<tr>
-		<td><?php echo h($role['Role']['id']); ?>&nbsp;</td>
-		<td><?php echo h($role['Role']['name']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $role['Role']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $role['Role']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $role['Role']['id']), null, __('Are you sure you want to delete # %s?', $role['Role']['id'])); ?>
-		</td>
-	</tr>
-<?php endforeach; ?>
-	</table>
-	<p>
-	<?php
-	echo $this->Paginator->counter(array(
-	'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-	));
-	?>	</p>
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
-	</div>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Role'), array('action' => 'add')); ?></li>
-		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+<h1 class="hide">نقش های کاربری</h1>
+<h2>لیست نقش های کاربری</h2>
+<?php
+$this->Html->addCrumb('نقش های کاربری', '/roles/', array('class' => 'breadcrumb'));
+?>
+<table class="bordered striped highlight centered responsive-table roles">
+    <thead>
+        <tr>
+            <th data-field="id"><?php echo $this->Paginator->sort('آی دی'); ?></th>
+            <th data-field="name"><?php echo $this->Paginator->sort('عنوان'); ?></th>
+            <th data-field="actions">عملیات</th>
+        </tr>
+    </thead>
+    <?php
+    foreach($roles as $role){
+        echo '<tr>';
+        echo '<td>'.$role['Role']['id'].'</td>';
+        echo '<td>'.$role['Role']['name'].'</td>';
+        echo '<td>'.$this->Html->link(__('مشاهده'), array('action' => 'view', $role['Role']['id'])).'|'.$this->Html->link(__('ویرایش'), array('action' => 'edit', $role['Role']['id'])).'|'.$this->Form->postLink(__('حذف'), array('action' => 'delete', $role['Role']['id']), null, __('Are you sure you want to delete # %s?', $role['Role']['id'])).'</td>';        
+        echo '</tr>';
+    }
+    ?>
+</table>
+<?php
+$params = $this->Paginator->params();
+if ($params['pageCount'] > 1) {
+    ?>
+    <ul class="pagination pagination-sm">
+        <?php
+        echo $this->Paginator->prev('<i class="material-icons">chevron_right</i>', array('class' => 'prev','tag' => 'li','escape' => false), '<a onclick="return false;"><i class="material-icons">chevron_right</i></a>', array('class' => 'prev disabled','tag' => 'li','escape' => false));
+        echo $this->Paginator->numbers(array('class' => 'waves-effect number', 'separator' => '','tag' => 'li','currentClass' => 'active','currentTag' => 'a'));
+        echo $this->Paginator->next('<i class="material-icons">chevron_left</i>', array('class' => 'next','tag' => 'li','escape' => false), '<a onclick="return false;"><i class="material-icons">chevron_left</i></a>', array('class' => 'next disabled','tag' => 'li','escape' => false));
+        ?>
+    </ul>
+<?php } ?>

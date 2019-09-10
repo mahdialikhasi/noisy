@@ -10823,3 +10823,40 @@ Request URL: /noisy/cv
 Stack Trace:
 #0 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2016-08-30 12:48:28 Error: [MissingControllerException] Controller class WoksController could not be found.
+Exception Attributes: array (
+  'class' => 'WoksController',
+  'plugin' => NULL,
+)
+Request URL: /noisy/woks
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-08-30 12:48:43 Error: [MissingControllerException] Controller class WoksController could not be found.
+Exception Attributes: array (
+  'class' => 'WoksController',
+  'plugin' => NULL,
+)
+Request URL: /noisy/woks
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-08-31 15:29:35 Error: [MissingControllerException] Controller class BooksController could not be found.
+Exception Attributes: array (
+  'class' => 'BooksController',
+  'plugin' => NULL,
+)
+Request URL: /noisy/books
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-08-31 15:42:36 Error: Fatal Error (4): syntax error, unexpected '}', expecting ',' or ';' in [C:\xampp\htdocs\noisy\app\View\Works\view.ctp, line 19]
+2016-08-31 15:42:36 Error: [FatalErrorException] syntax error, unexpected '}', expecting ',' or ';'
+Request URL: /noisy/works/view/%D8%A8%DB%8C%D8%AF%D8%A7%D8%B1-%D9%85%D8%B1%D8%AF%D8%A7%D9%86
+Stack Trace:
+#0 C:\xampp\htdocs\noisy\lib\Cake\Error\ErrorHandler.php(204): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 19)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 19, Array)
+#2 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 19, Array)
+#3 C:\xampp\htdocs\noisy\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

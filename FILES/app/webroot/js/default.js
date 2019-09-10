@@ -22,7 +22,10 @@ $(document).ready(function(){
   	}
   	$('.carousel.carousel-slider').carousel({full_width:true});
   	setInterval(function(){$('.carousel.carousel-slider').carousel('next');},10000);
-  	$('select').material_select();
+  	if ($('#flashMessage').html()) {
+	  	Materialize.toast($('#flashMessage').html(), 6000);    
+	}
+	$('.pushpin').pushpin({ top: $('.pushpin').offset().top });	
   	//$('.chips').material_chip();
   	/*Ajax loading*/
   	var sitePath;
@@ -44,7 +47,7 @@ $(document).ready(function(){
 	   		$(".side-nav .links li:eq(1)").addClass('active');
 	    }else if(sitePath == 'about'){
 	    	$(".side-nav .links li").removeClass('active');
-	   		$(".side-nav .links li:eq(4)").addClass('active');
+	   		$(".side-nav .links li:eq(5)").addClass('active');
 	    }else if(sitePath == 'books'){
     		$(".side-nav .links li").removeClass('active');
 	   		$(".side-nav .links li:eq(2)").addClass('active');
@@ -53,14 +56,17 @@ $(document).ready(function(){
 	   		$(".side-nav .links li:eq(3)").addClass('active');
 	    }else if(sitePath == 'contacts'){
 	    	$(".side-nav .links li").removeClass('active');
-	   		$(".side-nav .links li:eq(5)").addClass('active');
+	   		$(".side-nav .links li:eq(6)").addClass('active');
+	    }else if(sitePath == 'works'){
+	    	$(".side-nav .links li").removeClass('active');
+	   		$(".side-nav .links li:eq(4)").addClass('active');
 	    }
 	}       
     activeMenu();
     var siteURL = "http://" + top.location.host.toString();    
     var internalLinks, afterTitle, title, address, location, mainContent, breadcrumb;
     function AjaxLoadContent(){    	
-	    internalLinks = $("a[href^='"+siteURL+"'], a[href^='/'], a[href^='./'], a[href^='../']");
+	    internalLinks = $("a[href^='"+siteURL+"'], a[href^='/'], a[href^='./'], a[href^='../']").not('.ajaxoff');
 	    $(internalLinks).on('click', function(){
 	        address = $(this).attr('href');	        
 	        mainContent = address.split(' ').join('%20') + ' #data ';
@@ -107,9 +113,13 @@ $(document).ready(function(){
     	$( "#loading" ).removeClass('active');
 	    $( "#loading" ).addClass('hide');
 	    $('#content').removeClass('hidden');	    
+	    if ($('#flashMessage').html()) {
+	    	Materialize.toast($('#flashMessage').html(), 6000);    
+	    }	    
 	    activeMenu();
 	    $(internalLinks).off('click');
 	    AjaxLoadContent();
+	    //$('input[type="submit"]').click(function(){$('form').submit()});//solve the form submittiong problem
 	    $('#session').text('');
     });
 });
